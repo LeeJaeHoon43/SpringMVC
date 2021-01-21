@@ -18,19 +18,19 @@
         </div>
         
         <div class="row">
-	    <c:forEach var="book" items="${books}" varStatus="status">
-	        <div class="col-md-4">
-	          <div class="card">
-	              <img src="${book.image}" class="card-img-top" />
-	              <div class="card-body">
-	                  <h3 class="card-title">${book.title}</h3>
-	                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-	                  <a href="#" class="btn btn-primary">상세보기</a>
-	              </div>
-	          </div>
-	        </div>
-	    </c:forEach>
-        </div>
+		    <c:forEach var="book" items="${books}" varStatus="status">
+		        <div class="col-md-4">
+		            <div class="thumbnail">
+		                <img src="${ book.image }" />
+		                <div class="caption">
+		                    <h3>${ book.title } <small>${ book.author }</small></h3>
+		                    <a href="<c:url value='/books/edit/${ book.id }' />" class="btn btn-info">수정</a>
+		                    <a href="<c:url value='/books/delete/${ book.id }' />" class="btn btn-lg btn-danger">삭제</a>
+		                </div>
+		            </div>
+		        </div>
+		    </c:forEach>
+		</div>
     </div>
 </body>
 </html>

@@ -28,7 +28,7 @@
                 <label class="control-label">이미지</label>
                 <input name="image" type="text" class="form-control">
             </div>
-            <button type="submit" class="btn btn-lg btn-primary">전송</button>
+            <button type="submit" class="btn btn-lg btn-primary">도서 등록</button>
         </form>
 	</div>
 </body>
