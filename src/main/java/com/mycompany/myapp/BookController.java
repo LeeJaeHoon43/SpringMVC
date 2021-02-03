@@ -1,6 +1,9 @@
 package com.mycompany.myapp;
 
 import java.util.List;
+import java.util.logging.FileHandler;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.mycompany.mapper.BookMapper;
 import com.mycompany.vo.Book;
 
@@ -32,7 +38,9 @@ public class BookController {
 	}
 	
 	@RequestMapping(value = "/books", method = RequestMethod.POST)
-	public String create(@ModelAttribute Book book) {
+	public String create(@ModelAttribute Book book, @RequestParam MultipartFile file, HttpServletRequest request) {
+		String fileUrl = FileHelper.upload("/upload", file, request);
+		book.setImage(fileUrl);
 		bookMapper.create(book);
 		return "redirect:/books";
 	}

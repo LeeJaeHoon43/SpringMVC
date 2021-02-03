@@ -15,7 +15,7 @@
 			<h1>Books NEW</h1>
 			<p>views/books/new.jsp</p>
 		</div>
-		<form action="<c:url value="/books" />" method="post">
+		<form action="<c:url value="/books" />" method="post" enctype="multipart/form-data">
             <div class="form-group form-group-lg">
                 <label class="control-label">도서 제목</label>
                 <input name="title" type="text" class="form-control">
@@ -27,6 +27,9 @@
             <div class="form-group form-group-lg">
                 <label class="control-label">이미지</label>
                 <input name="image" type="text" class="form-control">
+            </div>
+            <div class="form-group form-group-lg">
+            	<input type="file" class="form-control-file" name="file">
             </div>
             <button type="submit" class="btn btn-lg btn-primary">도서 등록</button>
         </form>
