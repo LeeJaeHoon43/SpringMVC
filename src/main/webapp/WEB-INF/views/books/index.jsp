@@ -24,7 +24,7 @@
 		                <img src="${ book.image }" />
 		                <div class="caption">
 		                    <h3>${ book.title } <small>${ book.author }</small></h3>
-		                    <a href="<c:url value='/books/edit/${ book.id }' />" class="btn btn-info">수정</a>
+		                    <a href="<c:url value='/books/edit/${ book.id }' />" class="btn btn-lg btn-info">수정</a>
 		                    <a href="<c:url value='/books/delete/${ book.id }' />" class="btn btn-lg btn-danger">삭제</a>
 		                </div>
 		            </div>
